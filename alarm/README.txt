@@ -15,3 +15,6 @@ would presumably not show up in any sort of "stealthy" scan.
 I think it would be more helpful to instead of printing an error for each
 detection the program printed information about the whole log after scanning
 through it, a summary of the errors detected.
+
+Additionally the shell code detection is very limited, searching only for a 
+payload beginning with \x. 

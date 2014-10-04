@@ -11,14 +11,14 @@ def log()
             if data[6].match(/NMap/)
                 incidents = incidents + 1 
                 alert = [incidents, "NMap Attack", data[0], "HTTP", data[2]]
-                puts "%d. ALERT: %s is detected from %s (%s) (%s)!" %alert
+#                puts "%d. ALERT: %s is detected from %s (%s) (%s)!" %alert
             end
             if (data[3][0] == "4" && data[2].match(/HTTP/))
                 incidents = incidents + 1 
                 alert = [incidents, "HTTP error", data[0], "HTTP", data[2]]
-                puts "%d. ALERT: %s is detected from %s (%s) (%s)!" %alert
+#                puts "%d. ALERT: %s is detected from %s (%s) (%s)!" %alert
             end                
-            if data[2].match(/\\x/)
+            if data[2].match(/^\\x/)
                 incidents = incidents + 1 
                 alert = [incidents, "Shellcode Attack", data[0], "HTTP", data[2]]
                 puts "%d. ALERT: %s is detected from %s (%s) (%s)!" %alert
