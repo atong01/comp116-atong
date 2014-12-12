@@ -1,0 +1,25 @@
+README
+Alex Tong
+December 2014
+
+This as a prototype of s/key implementation. 
+The client hashes the password n-1 times and sends that value to the server
+which hashes that value one more time and compares it to its solution.
+If it checks out then the user gets access, and the server stores the value that
+client sent, the password hashed n-1 times. 
+
+This allows a secure message to be sent so that even if an attack successfully
+because this hash will never be used again by the server. 
+
+The major drawback is that it takes significant computation power to calculate
+the sums for a large n.
+
+This implementation uses sha256 for secure hashing.
+
+
+skeysetup.sh is run with:
+sh skeysetup.sh [password] [n]
+
+skey.sh is run with:
+sh skey.sh [password]
+this command can be run n number of times before locking out.
